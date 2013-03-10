@@ -103,7 +103,7 @@ class SignalInterfaceBase(object):
 		#print "Sending signal %s" % signalName
 		listeners = self.getListeners(signalName)
 		for l in listeners:
-			thread.start_new_thread(l, args)
+			l(*args)
 
 	def send(self, signalName, args = ()):
 		self._sendAsync(signalName, args)
