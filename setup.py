@@ -9,7 +9,5 @@ setup(name='yowsup',
                  'Yowsup.Interfaces.DBus', 'Yowsup.Interfaces.Lib', 'Yowsup.Auth.mechanisms', 'Yowsup.Common.Http',
                  'Yowsup.Registration.v1', 'Yowsup.Registration.v2'],
       package_dir = {'': 'src'},
-      data_files = [
-                   ('/usr/share/yowsup',['src/countries.csv']),
-                   ('/usr/share/dbus-1/services/', ['com.yowsup.methods.service']) ],
+      data_files = [('/usr/share/yowsup',['src/countries.csv']),],
       )
