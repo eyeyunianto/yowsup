@@ -106,6 +106,7 @@ class SignalInterfaceBase(object):
 			l(*args)
 
 	def send(self, signalName, args = ()):
+		print "Send signal ", signalName, args
 		self._sendAsync(signalName, args)
 	
 	def getListeners(self, signalName):
@@ -194,9 +195,12 @@ class MethodInterfaceBase(object):
 	def call(self, methodName, params=()):
 		#print "SHOULD CALL"
 		#print methodName
+		print "Executing method ", methodName, params
 		callback = self.getCallback(methodName)
 		if callback:
 			return callback(*params)
+		else:
+			print "Method not found"
 		#@@TODO raise no method exception
 		return None
 
