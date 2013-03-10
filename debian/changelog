@@ -1,0 +1,23 @@
+yowsup (1.0.5-0ubuntu1) quantal; urgency=low
+
+  * Do not use threads to dispatch signals
+
+ -- Matthias Gehre <M.Gehre@gmx.de>  Thu, 07 Mar 2013 23:37:08 -0600
+
+yowsup (1.0.4-0ubuntu1) quantal; urgency=low
+
+  * Upstream changes
+
+ -- Matthias Gehre <M.Gehre@gmx.de>  Sun, 03 Mar 2013 00:25:09 -0600
+
+yowsup (1.0.3-0ubuntu3) quantal; urgency=low
+
+  * Changed section
+
+ -- Matthias Gehre <M.Gehre@gmx.de>  Fri, 01 Mar 2013 23:13:23 -0600
+
+yowsup (1.0.3-0ubuntu2) quantal; urgency=low
+
+  * Initial release
+
+ -- Matthias Gehre <M.Gehre@gmx.de>  Thu, 28 Feb 2013 02:00:49 -0600

@@ -1,0 +1,16 @@
+Source: yowsup
+Section: net
+Priority: extra
+Maintainer: Matthias Gehre <M.Gehre@gmx.de>
+Build-Depends: debhelper (>= 8.0.0), python
+Standards-Version: 3.9.3
+Homepage: https://github.com/mgehre/yowsup
+#Vcs-Git: git://git.debian.org/collab-maint/yowsup.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/yowsup.git;a=summary
+
+Package: yowsup
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-dateutil
+Breaks: whosthere (< 1.0.7)
+Description: DBus service for WhatsApp
+ A DBus service for WhatsApp
