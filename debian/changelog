@@ -1,3 +1,10 @@
+yowsup (1.0.6-0ubuntu1) quantal; urgency=low
+
+  * Merged upstream push
+  * Removed yowsupd
+
+ -- Matthias Gehre <M.Gehre@gmx.de>  Sun, 10 Mar 2013 12:24:56 -0500
+
 yowsup (1.0.5-0ubuntu1) quantal; urgency=low
 
   * Do not use threads to dispatch signals
