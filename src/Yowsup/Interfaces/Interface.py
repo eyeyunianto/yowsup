@@ -20,7 +20,7 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 '''
 
 
-import thread
+import threading
 class SignalInterfaceBase(object):
 
 	signals = [	
@@ -68,7 +68,9 @@ class SignalInterfaceBase(object):
 			"group_gotGroups",			
 			
 			"notification_contactProfilePictureUpdated",
+			"notification_contactProfilePictureRemoved",
 			"notification_groupPictureUpdated",
+			"notification_groupPictureRemoved",
 			"notification_groupParticipantAdded",
 			"notification_groupParticipantRemoved",
 
@@ -110,13 +112,23 @@ class SignalInterfaceBase(object):
 		self._sendAsync(signalName, args)
 	
 	def getListeners(self, signalName):
-		if self.hasSignal(signalName) and self.registeredSignals.has_key(signalName):
-			return self.registeredSignals[signalName]
+		if self.hasSignal(signalName):
+			
+			
+			try:
+				self.registeredSignals[signalName]
+				return self.registeredSignals[signalName]
+			except KeyError:
+				pass
 
 		return []
 
 	def isRegistered(self, signalName):
-		return self.registeredSignals.has_key(signalName)
+		try:
+			self.registeredSignals[signalName]
+			return True
+		except KeyError:
+			return False
 	
 	def hasSignal(self, signalName):
 		try:
@@ -214,7 +226,11 @@ class MethodInterfaceBase(object):
 		return None
 
 	def isRegistered(self, methodName):
-		return self.registeredMethods.has_key(methodName)
+		try:
+			self.registeredMethods[methodName]
+			return True
+		except KeyError:
+			return False
 	
 	def registerCallback(self, methodName, callback):
 		if self.hasMethod(methodName):

@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 '''
 
-from mechanisms.wauth import WAuth as AuthMechanism
+from .mechanisms.wauth import WAuth as AuthMechanism
 
 from Yowsup.Common.constants import Constants
 
@@ -51,10 +51,10 @@ class YowsupAuth:
 		#should process callbacks
 
 	def authenticationFailed(self):
-		print "AUTH FAIL"
+		print("AUTH FAIL")
 
 	def authenticate(self, username, password, domain, resource):
-		print "Connecting to "+Constants.host
+		print("Connecting to "+Constants.host)
 		#connection = ConnectionEngine()
 		self.connection.connect((Constants.host, Constants.port));
 

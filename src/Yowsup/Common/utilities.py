@@ -32,7 +32,7 @@ class Utilities:
 		except:
 			identifier = identifier[::-1]
 		
-		digest = hashlib.md5(identifier)
+		digest = hashlib.md5(identifier.encode("utf-8"))
 		return digest.hexdigest()
 		
 	@staticmethod
@@ -44,9 +44,9 @@ class Utilities:
 		"""str( number, radix ) -- reverse function to int(str,radix) and long(str,radix)"""
 		
 		if not 2 <= radix <= 36:
-			raise ValueError, "radix must be in 2..36"
+			raise ValueError("radix must be in 2..36")
 		
-		abc = string.digits + string.letters
+		abc = string.digits + string.ascii_letters
 		
 		result = ''
 		
