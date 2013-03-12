@@ -889,7 +889,7 @@ class ReaderThread(threading.Thread):
 		for groupNode in children:
 			jid = groupNode.getAttributeValue("id") + "@g.us"
 			owner = groupNode.getAttributeValue("owner")
-			subject = groupNode.getAttributeValue("subject").encode('latin-1').decode();
+			subject = groupNode.getAttributeValue("subject")
 			subjectT = groupNode.getAttributeValue("s_t")
 			subjectOwner = groupNode.getAttributeValue("s_o")
 			creation = groupNode.getAttributeValue("creation")
@@ -906,7 +906,7 @@ class ReaderThread(threading.Thread):
 			ProtocolTreeNode.require(groupNode,"group")
 			#gid = groupNode.getAttributeValue("id")
 			owner = groupNode.getAttributeValue("owner")
-			subject = groupNode.getAttributeValue("subject").encode('latin-1').decode();
+			subject = groupNode.getAttributeValue("subject")
 			subjectT = groupNode.getAttributeValue("s_t")
 			subjectOwner = groupNode.getAttributeValue("s_o")
 			creation = groupNode.getAttributeValue("creation")
@@ -1174,7 +1174,7 @@ class ReaderThread(threading.Thread):
 					receiptRequested = True;
 
 			bodyNode = messageNode.getChild("body");
-			newSubject = None if bodyNode is None else bodyNode.data.encode('latin-1').decode();
+			newSubject = None if bodyNode is None else bodyNode.data
 			
 			if newSubject is not None:
 				self.signalInterface.send("group_subjectReceived",(msgId, fromAttribute, author, newSubject, int(attribute_t),  receiptRequested))
@@ -1206,7 +1206,7 @@ class ReaderThread(threading.Thread):
 						mediaPreview = messageNode.getChild("media").data
 						
 						if encoding == "raw" and mediaPreview:
-							mediaPreview = base64.b64encode(mediaPreview.encode('latin-1')).decode()
+							mediaPreview = base64.b64encode(mediaPreview)
 
 						if isGroup:
 							self.signalInterface.send("group_imageReceived", (msgId, fromAttribute, author, mediaPreview, mediaUrl, mediaSize, wantsReceipt))
@@ -1217,7 +1217,7 @@ class ReaderThread(threading.Thread):
 						mediaPreview = messageNode.getChild("media").data
 						
 						if encoding == "raw" and mediaPreview:
-							mediaPreview = base64.b64encode(mediaPreview.encode('latin-1')).decode()
+							mediaPreview = base64.b64encode(mediaPreview)
 
 						if isGroup:
 							self.signalInterface.send("group_videoReceived", (msgId, fromAttribute, author, mediaPreview, mediaUrl, mediaSize, wantsReceipt))
@@ -1238,12 +1238,12 @@ class ReaderThread(threading.Thread):
 						name = messageNode.getChild("media").getAttributeValue("name")
 						
 						if name:
-							name = name.encode('latin-1').decode()
+							name = name
 						
 						mediaPreview = messageNode.getChild("media").data
 						
 						if encoding == "raw" and mediaPreview:
-							mediaPreview = base64.b64encode(mediaPreview.encode('latin-1')).decode()
+							mediaPreview = base64.b64encode(mediaPreview)
 
 						if isGroup:
 							self.signalInterface.send("group_locationReceived", (msgId, fromAttribute, author, name or "", mediaPreview, mlatitude, mlongitude, wantsReceipt))
@@ -1257,7 +1257,7 @@ class ReaderThread(threading.Thread):
 						vcardName = messageNode.getChild("media").getChild("vcard").getAttributeValue("name")
 						
 						if vcardName:
-							vcardName = vcardName.encode('latin-1').decode()
+							vcardName = vcardName
 						
 						if vcardData is not None:
 							n = vcardData.find(">") +1
