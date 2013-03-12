@@ -1,3 +1,9 @@
+yowsup (1.0.7) quantal; urgency=low
+
+  * Fixed encoding
+
+ -- Matthias Gehre <M.Gehre@gmx.de>  Mon, 11 Mar 2013 22:34:27 -0500
+
 yowsup (1.0.6-0ubuntu1) quantal; urgency=low
 
   * Merged upstream push
