@@ -1,5 +1,5 @@
 Source: yowsup
-Section: net
+Section: libs
 Priority: extra
 Maintainer: Matthias Gehre <M.Gehre@gmx.de>
 Build-Depends: debhelper (>= 8.0.0), python
@@ -12,5 +12,5 @@ Package: yowsup
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}, python-dateutil
 Breaks: whosthere (<= 1.0.7)
-Description: DBus service for WhatsApp
- A DBus service for WhatsApp
+Description: Python library for WhatsApp
+ Yowsup is a python library for the WhatsApp protocol
